@@ -1,17 +1,18 @@
-import Ember from "ember";
+import EmberObject, { computed } from '@ember/object';
+import Controller from '@ember/controller';
 import Notifyable from 'ember-ui-helpers/mixins/notifyable';
 
-export default Ember.Controller.extend(Notifyable,{
-  person: Ember.computed(function(){
-    return Ember.Object.create({
+export default Controller.extend(Notifyable,{
+  person: computed(function(){
+    return EmberObject.create({
       address: "1234 Anywhere Lane",
       city: "Tampa",
       state: "FL",
       zip: "33601"
     });
   }),
-  business: Ember.computed(function(){
-    return Ember.Object.create({
+  business: computed(function(){
+    return EmberObject.create({
       name: "ParableSoft",
       address: "21 Jumpstreet",
       address2: "Suite 0",
@@ -20,8 +21,8 @@ export default Ember.Controller.extend(Notifyable,{
       zip: "33601"
     });
   }),
-  client: Ember.computed(function(){
-    return Ember.Object.create({
+  client: computed(function(){
+    return EmberObject.create({
       fullName: "Joe Smith",
       street: "1234 Dormany Days Rd.",
       street2: "Shed #2",

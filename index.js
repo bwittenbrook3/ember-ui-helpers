@@ -2,16 +2,17 @@
 
 module.exports = {
   name: 'ember-ui-helpers',
-  isDevelopingAddon: function() {
+  isDevelopingAddon: function () {
     return true;
   },
-  included: function(app, parentAddon) {
+  included: function (app) {
     this._super.included.apply(this, arguments);
-    var target = (parentAddon || app);
-  // see: https://github.com/ember-cli/ember-cli/issues/3718
+
+    // see: https://github.com/ember-cli/ember-cli/issues/3718
     if (typeof app.import !== 'function' && app.app) {
       app = app.app;
     }
+
     app.import("bower_components/sweetalert/dist/sweetalert.css");
     app.import("bower_components/sweetalert/dist/sweetalert-dev.js");
     app.import("vendor/assets/stylesheets/fade-in.css");

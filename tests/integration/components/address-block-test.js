@@ -1,25 +1,29 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('address-block', 'Integration | Component | address block', {
-  integration: true
-});
+module('Integration | Component | address block', function (hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
+  test('it renders', async function (assert) {
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{address-block}}`);
+    await render(hbs `{{address-block}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.dom('*')
+      .hasText('');
 
-  // Template block usage:
-  this.render(hbs`
-    {{#address-block}}
-      template block text
-    {{/address-block}}
-  `);
+    // Template block usage:
+    await render(hbs `
+      {{#address-block}}
+        template block text
+      {{/address-block}}
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*')
+      .hasText('template block text');
+  });
 });

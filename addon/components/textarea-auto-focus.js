@@ -1,5 +1,4 @@
-import Ember from 'ember';
+import TextArea from '@ember/component/text-area';
 import AutoFocusControl from "../mixins/auto-focus-control";
 
-const {TextArea} = Ember;
 export default TextArea.extend(AutoFocusControl,{});

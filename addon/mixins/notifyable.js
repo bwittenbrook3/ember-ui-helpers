@@ -1,7 +1,6 @@
-import Ember from 'ember';
-
-const {Mixin,inject,get} = Ember;
-const {service} = inject;
+import { inject as service } from '@ember/service';
+import Mixin from '@ember/object/mixin';
+import { get } from '@ember/object';
 
 export default Mixin.create({
   notifier: service(),
