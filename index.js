@@ -13,8 +13,8 @@ module.exports = {
       app = app.app;
     }
 
-    app.import("bower_components/sweetalert/dist/sweetalert.css");
-    app.import("bower_components/sweetalert/dist/sweetalert-dev.js");
+    app.import("node_modules/sweetalert/dist/sweetalert.css");
+    app.import("node_modules/sweetalert/dist/sweetalert-dev.js");
     app.import("vendor/assets/stylesheets/fade-in.css");
     app.import("vendor/assets/stylesheets/blank-slate.css");
     app.import("vendor/assets/stylesheets/page-header.css");
